@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> VM University - Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image:url("bookssogg.jpg");
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: black;
+            background-color: #003366;
+        }
+
+        .container {
+            background-image:url("bookssog.jpg");
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            backdrop-filter:blur(10px);
+            background-color: #fff;
+            
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            margin-bottom: 16px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <title>Contact Page</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="confirmationMessage" class="hidden">
+            <p>Thank you for your feedback!</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevents the default form submission behavior
+    
+            // You can add your own logic to handle the form data.
+            // For now, let's just show a confirmation message and redirect after a delay.
+    
+            // Show thank you message
+            document.getElementById('confirmationMessage').classList.remove('hidden');
+    
+            // Hide form after submission
+            document.getElementById('contactForm').classList.add('hidden');
+    
+            // Redirect to the previous page after 3 seconds (adjust as needed)
+            setTimeout(function () {
+                window.history.back();
+            }, 3000);
+        });
+    </script>
+    
+        
+        
+    <footer>
+        <p>&copy; 2023 VM University. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
